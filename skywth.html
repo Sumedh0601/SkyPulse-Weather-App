@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="SkyPulse - A modern weather application built with HTML, CSS and JavaScript."
+    >
+
+    <title>SkyPulse Weather</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="background-orb orb-one"></div>
+    <div class="background-orb orb-two"></div>
+
+    <main class="app">
+
+        <!-- Header -->
+        <header class="header">
+
+            <div class="brand">
+                <div class="brand-icon">☁️</div>
+
+                <div>
+                    <h1>SkyPulse</h1>
+                    <p>Weather, beautifully simplified.</p>
+                </div>
+            </div>
+
+            <button id="locationBtn" class="location-btn">
+                📍 Use My Location
+            </button>
+
+        </header>
+
+
+        <!-- Search -->
+        <section class="search-section">
+
+            <div class="search-box">
+
+                <span class="search-icon">🔎</span>
+
+                <input
+                    type="text"
+                    id="cityInput"
+                    placeholder="Search for a city..."
+                    autocomplete="off"
+                >
+
+                <button id="searchBtn">
+                    Search
+                </button>
+
+            </div>
+
+            <p id="statusMessage" class="status-message">
+                Search for a city to see its weather.
+            </p>
+
+        </section>
+
+
+        <!-- Main Weather -->
+        <section id="weatherSection" class="weather-section hidden">
+
+            <div class="weather-card">
+
+                <div class="location-info">
+                    <span>Current weather</span>
+                    <h2 id="cityName">--</h2>
+                    <p id="dateTime">--</p>
+                </div>
+
+                <div class="current-weather">
+
+                    <div class="weather-visual">
+                        <div id="weatherIcon" class="weather-icon">
+                            ☀️
+                        </div>
+
+                        <p id="weatherDescription">
+                            Clear sky
+                        </p>
+                    </div>
+
+                    <div class="temperature">
+                        <span id="temperature">--</span>
+                        <sup>°C</sup>
+
+                        <p>
+                            Feels like
+                            <strong id="feelsLike">--</strong>°C
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Stats -->
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <span class="stat-icon">💧</span>
+                    <div>
+                        <p>Humidity</p>
+                        <strong id="humidity">--%</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon">💨</span>
+                    <div>
+                        <p>Wind</p>
+                        <strong id="wind">-- km/h</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon">🌧️</span>
+                    <div>
+                        <p>Precipitation</p>
+                        <strong id="precipitation">-- mm</strong>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <span class="stat-icon">📊</span>
+                    <div>
+                        <p>Pressure</p>
+                        <strong id="pressure">-- hPa</strong>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Sun -->
+            <div class="sun-card">
+
+                <div>
+                    <span>🌅</span>
+                    <p>Sunrise</p>
+                    <strong id="sunrise">--</strong>
+                </div>
+
+                <div class="sun-progress">
+                    <div class="sun-line"></div>
+                    <div id="sunDot" class="sun-dot"></div>
+                </div>
+
+                <div>
+                    <span>🌇</span>
+                    <p>Sunset</p>
+                    <strong id="sunset">--</strong>
+                </div>
+
+            </div>
+
+
+            <!-- Forecast -->
+            <section class="forecast-section">
+
+                <div class="section-heading">
+                    <div>
+                        <span>Forecast</span>
+                        <h2>Next 7 Days</h2>
+                    </div>
+                </div>
+
+                <div id="forecast" class="forecast-grid"></div>
+
+            </section>
+
+        </section>
+
+
+        <!-- Empty State -->
+        <section id="emptyState" class="empty-state">
+
+            <div class="empty-icon">🌎</div>
+
+            <h2>Weather at your fingertips</h2>
+
+            <p>
+                Search for a city or use your location to discover
+                what's happening outside.
+            </p>
+
+        </section>
+
+
+        <footer>
+            <p>
+                Built with HTML, CSS & JavaScript · Data by Open-Meteo
+            </p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
